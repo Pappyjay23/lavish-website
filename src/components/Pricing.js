@@ -5,10 +5,19 @@ import { FaFire } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import Button from './Button'
 import "./Pricing.css"
+import { motion } from "framer-motion/dist/framer-motion";
 
 function Pricing() {
+
+    const fade = {
+        opacity: 1,
+        transition:{
+            duration: 2
+        }
+    }
+
     return (
-        <div className='pricing-section'>
+        <motion.div className='pricing-section' initial={{opacity: 0}} whileInView={fade} viewport={{ once: true }} >
             <h1>Pricing</h1>
             <div className="cards-group">
                 <div className="card-container">
@@ -69,7 +78,7 @@ function Pricing() {
                     </Link>
                 </div>  
             </div>
-        </div>
+        </motion.div>
     )
 }
 

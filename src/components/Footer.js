@@ -10,10 +10,19 @@ import {
 } from 'react-icons/fa';
 import { MdFingerprint } from 'react-icons/md';
 import Button from './Button';
+import { motion } from "framer-motion/dist/framer-motion";
 
 function Footer() {
+
+  const fade = {
+    opacity: 1,
+    transition:{
+        duration: 2
+    }
+}
+
   return (
-    <div className='footer-container'>
+    <motion.div className='footer-container' initial={{opacity: 0}} whileInView={fade} viewport={{ once: true }} >
       <section className='footer-subscription'>
         <p className='footer-subscription-heading'>
           Join our exclusive membership to receive the latest news and trends
@@ -123,7 +132,7 @@ function Footer() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
 

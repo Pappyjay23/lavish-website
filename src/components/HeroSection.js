@@ -2,10 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from './Button'
 import "./HeroSection.css"
+import { motion } from "framer-motion/dist/framer-motion";
 
 function HeroSection({topLine, headLine, description, button, src, alt, darkTxt, darkBg, imgStart}) {
+
+    const fade = {
+        opacity: 1,
+        transition:{
+            duration: 2
+        }
+    }
+
     return (
-        <div className={darkBg ? 'hero-section darkBg': "hero-section"}>
+        <motion.div className={darkBg ? 'hero-section darkBg': "hero-section"} initial={{opacity: 0}} whileInView={fade} viewport={{ once: true }} >
             <div className={imgStart ? "hero-section-wrapper reverse" : "hero-section-wrapper"}>
                 <div className="hero-section-text">
                     <p className={darkTxt ? "top-line darkTxt" : "top-line"}>{topLine}</p>
@@ -19,7 +28,7 @@ function HeroSection({topLine, headLine, description, button, src, alt, darkTxt,
                     </figure>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

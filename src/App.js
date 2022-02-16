@@ -9,6 +9,7 @@ import Services from './components/pages/Services/Services';
 import SignUp from './components/pages/SignUp/SignUp';
 
 function App() {
+  
   return (
     <Router>
       <Navbar />
