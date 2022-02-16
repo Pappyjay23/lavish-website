@@ -17,9 +17,9 @@ function Pricing() {
     }
 
     return (
-        <motion.div className='pricing-section' initial={{opacity: 0}} whileInView={fade} viewport={{ once: true }} >
-            <h1>Pricing</h1>
-            <div className="cards-group">
+        <motion.div className='pricing-section' viewport={{ once: true }} >
+            <motion.h1 initial={{opacity: 0}} whileInView={fade}>Pricing</motion.h1>
+            <motion.div initial={{opacity: 0}} whileInView={fade} className="cards-group">
                 <div className="card-container">
                     <Link to="/sign-up" className='card-link'>
                         <div className="icon">
@@ -77,7 +77,7 @@ function Pricing() {
                     
                     </Link>
                 </div>  
-            </div>
+            </motion.div>
         </motion.div>
     )
 }

@@ -22,8 +22,8 @@ function Footer() {
 }
 
   return (
-    <motion.div className='footer-container' initial={{opacity: 0}} whileInView={fade} viewport={{ once: true }} >
-      <section className='footer-subscription'>
+    <motion.div className='footer-container' viewport={{ once: true }} >
+      <motion.section initial={{opacity: 0}} whileInView={fade} className='footer-subscription'>
         <p className='footer-subscription-heading'>
           Join our exclusive membership to receive the latest news and trends
         </p>
@@ -41,8 +41,8 @@ function Footer() {
             <Button buttonStyle='btn--outline'>Subscribe</Button>
           </form>
         </div>
-      </section>
-      <div className='footer-links'>
+      </motion.section>
+      <motion.div initial={{opacity: 0}} whileInView={fade} className='footer-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>About Us</h2>
@@ -76,8 +76,8 @@ function Footer() {
             <Link to={"//www.twitter.com"}>Twitter</Link>
           </div>
         </div>
-      </div>
-      <section className='social-media'>
+      </motion.div>
+      <motion.section initial={{opacity: 0}} whileInView={fade} className='social-media'>
         <div className='social-media-wrap'>
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
@@ -131,7 +131,7 @@ function Footer() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
     </motion.div>
   );
 }
